@@ -1,0 +1,26 @@
+# User ID controlled by request parameter (IDOR)
+
+## Lab:
+PortSwigger Web Security Academy
+
+## Description:
+This lab demonstrates an IDOR vulnerability where user ID is controlled by a request parameter.
+
+## Steps to Solve:
+1. Login with normal user (wiener)
+2. Turn ON Burp Suite intercept
+3. Capture request to /my-account?id=wiener
+4. Change parameter:
+   id=carlos
+5. Forward request
+6. Access Carlos account and get API key
+
+## Vulnerability:
+Insecure Direct Object Reference (IDOR)
+
+## Impact:
+Attacker can access other users' sensitive data.
+
+## Prevention:
+- Implement proper access control checks
+- Validate user authorization on server side
